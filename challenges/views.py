@@ -1,8 +1,18 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseBadRequest
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.urls import reverse
 
-def january(request):
-    return HttpResponseBadRequest("Eat no meat for the entire month!")
 
-def february(request):
-    return HttpResponseBadRequest("Walk for at least 20 min every day")
+def monthly_challenge(request, month):
+    challenge_text = None
+    if month == "january":
+        challenge_text = "Eat no meat for the entire month!"
+    elif month == "february":
+        challenge_text = "Walk for at least 20 minutes every day!"
+    elif month == "march":
+        challenge_text = "Learn Django for at least 20 minutes every day!"
+    else :
+        return HttpResponseNotFound("This month is not supported!")
+    return HttpResponse(challenge_text)
+
+
