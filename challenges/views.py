@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.urls import reverse
 
+def monthly_challenge_by_number(request, month):
+    return HttpResponse(month)
 
 def monthly_challenge(request, month):
     challenge_text = None
