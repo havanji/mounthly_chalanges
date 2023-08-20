@@ -5,12 +5,8 @@
 {% endblock page_title %}
     
 {% block content %}
-    <header>
-        <nav>
-            <a href="">All Challenges
-        </nav>
-    </header>
-
+    {% include "Challenges/includes/header.html" %}
+    
     <h1> {{ month_name|title }} Challenge </h1>
     {% if text is not None %}
        <h2> {{ text }}</h2>
