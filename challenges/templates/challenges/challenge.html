@@ -2,7 +2,8 @@
 {% load static %}
 
 ]{% block css_files %}
-    <link rel="stylesheet" href="{% static "Challenges/challenges.css" %}">
+<link rel="stylesheet" href="{% static "challenges/includes/challenge.css" %}">
+<link rel="stylesheet" href="{% static "challenges/includes/header.css" %}">
 {% endblock css_files %}
 
 
@@ -17,7 +18,7 @@
     {% if text is not None %}
        <h2> {{ text }}</h2>
     {% else %}
-       <h3>There is no challenge for this month yet!</h3>
+       <h3 class="fallback">There is no challenge for this month yet!</h3>
     {% endif %}
 {% endblock content %}
 
